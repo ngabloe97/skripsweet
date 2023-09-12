@@ -1,5 +1,5 @@
 # Streamlit-sentiment-ina
 
-link App : https://rthveilyn-playstore-sentiment-indonesia-w-streamlit-main-63xybj.streamlitapp.com/
+link App : https://skripsweet-yxemsqfekqdvay638e7lqb.streamlit.app/
 
 Streamlit sentiment indonesia
