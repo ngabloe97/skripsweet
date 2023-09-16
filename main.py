@@ -18,7 +18,7 @@ from sklearn import svm
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-from sklearn.metrics import f1_score, recall_score, precision_score, confusion_matrix, accuracy_score, classification_report
+from sklearn.metrics import f1_score, recall_score, precision_score,ConfusionMatrixDisplay,confusion_matrix, accuracy_score, classification_report
 
 def main():
 
