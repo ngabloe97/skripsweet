@@ -18,7 +18,7 @@ from sklearn import svm
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-from sklearn.metrics import f1_score, recall_score, precision_score,ConfusionMatrixDisplay,confusion_matrix, accuracy_score, classification_report
+from sklearn.metrics import f1_score, recall_score, precision_score, ConfusionMatrixDisplay,confusion_matrix, accuracy_score, classification_report
 
 def main():
 
@@ -402,11 +402,11 @@ def main():
                     
                     def score_sentiment(score):
                         if score == 'positive':
-                            return 0
+                            return 1
                         elif score == 'negative':
                             return -1
                         else:
-                            return 1
+                            return 0
 
                     biner = df['sentiment'].apply(score_sentiment)    
 
@@ -427,7 +427,7 @@ def main():
                     st.write("===========================================================")
                     #st.write('confusion matrix : \n', confusion_matrix(Y_test, predict))
                     st.subheader("Confusion Matrix")
-                    disp = ConfusionMatrixDisplay.from_predictions(rfpc,Y_test)
+                    disp = ConfusionMatrixDisplay.from_predictions(predict,Y_test)
                     disp.plot()
                     st.pyplot()
                     st.set_option('deprecation.showPyplotGlobalUse', False)
