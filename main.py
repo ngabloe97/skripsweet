@@ -435,11 +435,11 @@ def main():
                     
                     def score_sentiment(score):
                         if score == 'positive':
-                            return 0
+                            return 1
                         elif score == 'negative':
                             return -1
                         else:
-                            return 1
+                            return 0
 
                     biner = df['sentiment'].apply(score_sentiment)    
 
@@ -463,7 +463,12 @@ def main():
                     st.write("R Precision score -> ", precision_score(rfpc, Y_test, average='macro')*100)
                     st.write("R f1 score        -> ", f1_score(rfpc, Y_test, average='macro')*100)
                     st.write("===========================================================")
-                    st.write('confusion matrix : \n', confusion_matrix(rfpc, Y_test))
+                    #st.write('confusion matrix : \n', confusion_matrix(rfpc, Y_test))
+                    st.subheader("Confusion Matrix")
+                    disp = ConfusionMatrixDisplay.from_predictions(rfpc,Y_test)
+                    disp.plot()
+                    st.pyplot()
+                    st.set_option('deprecation.showPyplotGlobalUse', False)
                     st.write("===========================================================")
                     st.text('classification report : \n'+ classification_report(rfpc, Y_test, zero_division=0))
                     st.write("===========================================================")
